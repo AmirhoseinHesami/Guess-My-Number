@@ -28,6 +28,7 @@ check.addEventListener("click", function () {
     number.textContent = secretNumber;
     body.style.backgroundColor = "#60b347";
     number.style.width = "30rem";
+    guess.setAttribute("disabled", "");
 
     if (scoreState > highScoreState) {
       highScoreState = scoreState;
@@ -44,6 +45,8 @@ check.addEventListener("click", function () {
     } else {
       message.textContent = "💥 You lost the game!";
       score.textContent = 0;
+      body.style.backgroundColor = "#ed143d";
+      guess.setAttribute("disabled", "");
     }
   }
 });
@@ -57,4 +60,5 @@ again.addEventListener("click", function () {
   score.textContent = scoreState;
   body.style.backgroundColor = "#222";
   number.style.width = "15rem";
+  guess.removeAttribute("disabled");
 });
