@@ -30,6 +30,7 @@ check.addEventListener("click", function () {
     number.style.width = "30rem";
     guess.setAttribute("disabled", "");
 
+    // set the high score
     if (scoreState > highScoreState) {
       highScoreState = scoreState;
       highScore.textContent = highScoreState;
@@ -42,6 +43,8 @@ check.addEventListener("click", function () {
         guessValue > secretNumber ? "📈 Too High!" : "📉 Too Low!";
       scoreState--;
       score.textContent = scoreState;
+
+      // when the player loses
     } else {
       message.textContent = "💥 You lost the game!";
       score.textContent = 0;
